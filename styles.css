@@ -1,0 +1,27 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: cadetblue;
+    color: white;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+p {
+  font-size: 1em;
+  font-weight: 300;
+}
+
+button {
+  color: cadetblue;
+  background-color: white;
+  border: none;
+  margin: 10px 0px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1em;
+}
