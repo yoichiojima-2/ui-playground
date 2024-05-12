@@ -33,40 +33,60 @@ const hideMemberInput = () => {
   membersList.innerHTML = "";
 };
 
-const addMember = (memberName) => {
-  if (!memberName) {
+const addMember = (name) => {
+  console.log(`adding member ${name}`)
+  if (!name) {
     console.log("No member name provided");
     return;
   }
 
-  const memberNameList = document.getElementById("memberList");
+  const nameList = document.getElementById("memberList");
 
   const container = document.createElement("div");
-  container.id = `${memberName}Container`;
+  container.id = `${name}Container`;
   container.className = "member-container";
 
-  const addPaymentButton = document.createElement("button");
-  addPaymentButton.textContent = "+💰";
-  addPaymentButton.className = "add-payment-button";
-  addPaymentButton.onclick = () => {
-    addPayment(memberName, 100000);
-  };
-
   const addedMember = document.createElement("p");
-  addedMember.id = `${memberName}Name`;
-  addedMember.textContent = memberName;
+  addedMember.id = `${name}Name`;
+  addedMember.textContent = name;
   addedMember.className = "member-name";
 
-  container.appendChild(addPaymentButton);
-  container.appendChild(addedMember);
+  const buttons = document.createElement("div");
+  buttons.className = "member-buttons";
 
-  memberNameList.appendChild(container);
+  const addPaymentButton = document.createElement("button");
+  addPaymentButton.textContent = "💰";
+  addPaymentButton.className = "member-button";
+  addPaymentButton.onclick = () => {
+    addPayment(name, 100000);
+  };
+
+  const removeMemberButton = document.createElement("button");
+  removeMemberButton.textContent = "❌";
+  removeMemberButton.className = "member-button";
+  removeMemberButton.onclick = () => {
+    removeMember(name);
+  };
+
+  buttons.appendChild(addPaymentButton);
+  buttons.appendChild(removeMemberButton);
+
+  container.appendChild(addedMember);
+  container.appendChild(buttons);
+
+  nameList.appendChild(container);
 
   const memberInput = document.getElementById("memberInput");
   memberInput.value = "";
 
-  console.log(`${memberName} added`);
+  console.log(`${name} added`);
 };
+
+const removeMember = (name) => {
+    const member = document.getElementById(`${name}Container`);
+    member.remove();
+    console.log(`removed: ${name}`);
+}
 
 const squareUp = () => {
   console.log("square up");
