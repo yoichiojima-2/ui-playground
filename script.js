@@ -3,6 +3,7 @@ const toggleMemberInput = () => {
   memberEntry ? hideMemberInput() : showMemberInput();
 };
 
+
 const showMemberInput = () => {
   const membersList = document.getElementById("addMember");
 
@@ -28,10 +29,12 @@ const showMemberInput = () => {
   membersList.appendChild(memberEntry);
 };
 
+
 const hideMemberInput = () => {
   const membersList = document.getElementById("addMember");
   membersList.innerHTML = "";
 };
+
 
 const addMember = (name) => {
   console.log(`adding member ${name}`)
@@ -82,15 +85,18 @@ const addMember = (name) => {
   console.log(`${name} added`);
 };
 
+
 const removeMember = (name) => {
     const member = document.getElementById(`${name}Container`);
     member.remove();
     console.log(`removed: ${name}`);
 }
 
+
 const squareUp = () => {
   console.log("square up");
 };
+
 
 const addPayment = (name, amount) => {
   console.log(`adding payment ${name} - ${amount}`);
