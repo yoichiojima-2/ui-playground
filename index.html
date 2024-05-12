@@ -11,9 +11,17 @@
 </head>
 <body>
     <div class="container">
-        <h1>Experiment</h1>
-        <p>this is a playground to test out HTML, CSS, javascript</p>
-        <button onclick="task()">do something</button>
+        <h1>Square Payment</h1>
+        <p>
+            track who paid what and calculate how much who 
+            need to paid to whom to make it fair
+        </p>
+        <div class="member-list"></div>
+        <div class="horizontal-box">
+            <button onclick="showMemberInput()">add member</button>
+            <button onclick="squareUp()">square up</button>
+        </div>
+        <div id="addMember" class="add-member"></div>
     </div>
     <script src="script.js"></script>
 </body>
