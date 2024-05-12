@@ -48,23 +48,27 @@ button {
   height: 100vh;
 }
 
-#description {
-  margin-bottom: 50px;
+#title {
+  margin-bottom: 30px;
 }
 
-.add-member {
-  margin: 15px;
-  padding: 15px;
+#description {
+  margin-bottom: 10px;
+}
+
+#add-member-button {
+  height: 50px;
+  width: 50px;
 }
 
 .member-list {
   display: flex;
   flex-direction: column;
+  margin: 20px;
 }
 
 .member-container {
   display: flex;
-  margin-bottom: 20px;
 }
 
 .member-name {
@@ -76,4 +80,8 @@ button {
   color: white;
   background-color: rgba(255, 255, 255, 0);
   border: 1px solid white;
+}
+
+.member-entry {
+  margin-bottom: 10px;
 }

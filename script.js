@@ -14,9 +14,10 @@ const showMemberInput = () => {
   input.id = "memberInput";
   input.type = "text";
   input.className = "member-input";
-  input.placeholder = "Enter member name";
+  input.placeholder = "enter name to add";
 
   const addButton = document.createElement("button");
+  addButton.id = "add-member-button";
   addButton.textContent = "+";
 
   addButton.onclick = () => {
@@ -38,6 +39,7 @@ const addMember = (memberName) => {
     console.log("No member name provided");
     return;
   }
+
   const memberNameList = document.getElementById("memberList");
 
   const container = document.createElement("div");
