@@ -5,7 +5,7 @@ const toggleMemberInput = () => {
 
 
 const showMemberInput = () => {
-  const membersList = document.getElementById("addMember");
+  const membersList = document.getElementById("inputField");
 
   const memberEntry = document.createElement("div");
   memberEntry.id = "memberEntry";
@@ -61,7 +61,7 @@ const addMember = (name) => {
   addPaymentButton.textContent = "💰";
   addPaymentButton.className = "member-button";
   addPaymentButton.onclick = () => {
-    addPayment(name, 100000);
+    showPaymentInput(name, 100000);
   };
 
   const removeMemberButton = document.createElement("button");
@@ -89,6 +89,9 @@ const addMember = (name) => {
 const removeMember = (name) => {
     const member = document.getElementById(`${name}Container`);
     member.remove();
+
+    const paymentContainer = document.getElementById("paymentContainer");
+    paymentContainer.remove();
     console.log(`removed: ${name}`);
 }
 
@@ -97,7 +100,31 @@ const squareUp = () => {
   console.log("square up");
 };
 
+const showPaymentInput = (name) => {
+  field = document.getElementById("inputField");
+  field.innerHTML = "";
 
-const addPayment = (name, amount) => {
-  console.log(`adding payment ${name} - ${amount}`);
+  paymentContainer = document.createElement("div");
+  paymentContainer.id = "paymentContainer";
+
+  const titleInput = document.createElement("input");
+  titleInput.id = "paymentTitleInput";
+  titleInput.placeholder = "title";
+  paymentContainer.appendChild(titleInput);
+
+  const amountInput = document.createElement("input");
+  amountInput.id = "paymentAmountInput";
+  amountInput.placeholder = "amount";
+  paymentContainer.appendChild(amountInput);
+
+  const addButton = document.createElement("button");
+  addButton.textContent = "+";
+  addButton.onclick = () => addPayment(name, titleInput.value, amountInput.value);
+  paymentContainer.appendChild(addButton);
+
+  field.appendChild(paymentContainer);
 };
+
+addPayment = (name, title, amount) => {
+    console.log(name, title, amount);
+}

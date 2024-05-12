@@ -25,6 +25,8 @@ input {
 
 input::placeholder {
   color: white;
+  display: flex;
+  justify-content: center;
 }
 
 button {
@@ -70,6 +72,20 @@ button {
   display: flex;
   flex-direction: column;
   margin: 20px;
+}
+
+#paymentTitleInput {
+  width: 30%;
+}
+
+#paymentAmountInput {
+  width: 30%;
+}
+
+#paymentContainer {
+  display: flex;
+  margin-bottom: 40px;
+  width: 100%;
 }
 
 .member-container {
