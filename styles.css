@@ -74,16 +74,28 @@ button {
   margin: 20px;
 }
 
+#payment-name {
+  font-size: 1em;
+  font-weight: 700;
+  margin-right: 10%;
+}
+
 #paymentTitleInput {
-  width: 30%;
+  width: 20%;
+  border: 1px solid white;
+  border-radius: 10px;
 }
 
 #paymentAmountInput {
-  width: 30%;
+  width: 20%;
+  border: 1px solid white;
+  border-radius: 10px;
 }
 
 #paymentContainer {
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 40px;
   width: 100%;
 }

@@ -1,6 +1,6 @@
 const toggleMemberInput = () => {
   const memberEntry = document.getElementById("memberEntry");
-  memberEntry ? hideMemberInput() : showMemberInput();
+  memberEntry ? clearInputField() : showMemberInput();
 };
 
 
@@ -28,13 +28,6 @@ const showMemberInput = () => {
   memberEntry.appendChild(addButton);
   membersList.appendChild(memberEntry);
 };
-
-
-const hideMemberInput = () => {
-  const membersList = document.getElementById("addMember");
-  membersList.innerHTML = "";
-};
-
 
 const addMember = (name) => {
   console.log(`adding member ${name}`)
@@ -101,11 +94,15 @@ const squareUp = () => {
 };
 
 const showPaymentInput = (name) => {
-  field = document.getElementById("inputField");
-  field.innerHTML = "";
-
+  field = clearInputField();
+  
   paymentContainer = document.createElement("div");
   paymentContainer.id = "paymentContainer";
+
+  const name_element = document.createElement("p");
+  name_element.id = "payment-name";
+  name_element.textContent = `${name}:`;
+  paymentContainer.appendChild(name_element);
 
   const titleInput = document.createElement("input");
   titleInput.id = "paymentTitleInput";
@@ -127,4 +124,10 @@ const showPaymentInput = (name) => {
 
 addPayment = (name, title, amount) => {
     console.log(name, title, amount);
+}
+
+const clearInputField = () => {
+  field = document.getElementById("inputField");
+  field.innerHTML = "";
+  return field;
 }
