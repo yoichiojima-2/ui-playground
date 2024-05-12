@@ -1,5 +1,5 @@
 const toggleMemberInput = () => {
-  const memberEntry = document.getElementById("member-entry");
+  const memberEntry = document.getElementById("memberEntry");
   memberEntry ? hideMemberInput() : showMemberInput();
 };
 
