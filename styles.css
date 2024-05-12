@@ -1,38 +1,12 @@
 body {
-    font-family: "Poppins", sans-serif;
-    background-color: cadetblue;
-    color: white;
-    padding: 20px;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-.horizontal-box {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.add-member {
-  margin: 15px;
-  padding: 15px;
-}
-
-.add-button {
-  width: 50px;
-  height: 50px;
+  font-family: "Poppins", sans-serif;
+  background-color: cadetblue;
+  color: white;
 }
 
 h1 {
-    font-size: 2em;
-    font-weight: 700;
+  font-size: 2em;
+  font-weight: 700;
 }
 
 p {
@@ -59,9 +33,47 @@ button {
   border: none;
   margin: 10px;
   padding: 10px 20px;
-  border-radius: 20px;
+  border-radius: 30px;
   font-weight: 700;
-  font-size: 1em;
-  width: 140px;
-  height: 50px;
+  font-size: 1.2em;
+  width: auto;
+  height: auto;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#description {
+  margin-bottom: 50px;
+}
+
+.add-member {
+  margin: 15px;
+  padding: 15px;
+}
+
+.member-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.member-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.member-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.add-payment-button {
+  color: white;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid white;
 }
