@@ -56,12 +56,16 @@ button {
   margin-bottom: 10px;
 }
 
+#memberEntry {
+  margin-bottom: 10px;
+}
+
 #add-member-button {
   height: 50px;
   width: 50px;
 }
 
-.member-list {
+#memberList {
   display: flex;
   flex-direction: column;
   margin: 20px;
@@ -80,8 +84,4 @@ button {
   color: white;
   background-color: rgba(255, 255, 255, 0);
   border: 1px solid white;
-}
-
-.member-entry {
-  margin-bottom: 10px;
 }

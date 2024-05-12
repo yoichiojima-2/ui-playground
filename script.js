@@ -7,8 +7,7 @@ const showMemberInput = () => {
   const membersList = document.getElementById("addMember");
 
   const memberEntry = document.createElement("div");
-  memberEntry.id = "member-entry";
-  memberEntry.className = "member-entry";
+  memberEntry.id = "memberEntry";
 
   const input = document.createElement("input");
   input.id = "memberInput";
@@ -17,7 +16,7 @@ const showMemberInput = () => {
   input.placeholder = "enter name to add";
 
   const addButton = document.createElement("button");
-  addButton.id = "add-member-button";
+  addButton.id = "memberAddButton";
   addButton.textContent = "+";
 
   addButton.onclick = () => {
