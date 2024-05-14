@@ -59,6 +59,11 @@ button {
   margin-bottom: 10px;
 }
 
+#inputField {
+  display: flex;
+  justify-content: center;
+}
+
 #memberEntry {
   margin-bottom: 10px;
 }
@@ -74,36 +79,41 @@ button {
   margin: 20px;
 }
 
-#payment-name {
+#paymentName {
+  text-align: center;
+  font-size: 1.2em;
   font-weight: 700;
   margin-right: 10%;
 }
 
+#paymentInputContainer {
+  display: flex;
+  justify-content: center;
+}
+
 #paymentTitleInput {
-  font-size: 0.8em;
   width: 20%;
   border: 1px solid white;
   border-radius: 10px;
 }
 
 #paymentTitleInput::placeholder {
-  font-size: 0.7em;
+  font-size: 0.8em;
 }
 
 #paymentAmountInput {
-  font-size: 0.8em;
   width: 20%;
   border: 1px solid white;
   border-radius: 10px;
 }
 
 #paymentAmountInput::placeholder {
-  font-size: 0.7em;
+  font-size: 0.8em;
 }
 
 #paymentContainer {
-  font-size: 0.8em;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 40px;
