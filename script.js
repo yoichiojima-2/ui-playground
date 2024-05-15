@@ -30,6 +30,7 @@ const showMemberInput = () => {
 
 const addMember = (name) => {
   console.log(`adding member ${name}`);
+
   if (!name) {
     console.log("No member name provided");
     return;
@@ -37,9 +38,9 @@ const addMember = (name) => {
 
   const nameList = document.getElementById("memberList");
 
-  const container = document.createElement("div");
-  container.id = `${name}Container`;
-  container.className = "member-container";
+  const hstack = document.createElement("div");
+  hstack.id = `${name}Container`;
+  hstack.className = "member-container";
 
   const addedMember = document.createElement("p");
   addedMember.id = `${name}Name`;
@@ -63,13 +64,29 @@ const addMember = (name) => {
     removeMember(name);
   };
 
+  const itemsBox = document.createElement("div")
+  itemsBox.id = `${name}Items`
+  itemsBox.className = "payment-items-box";
+
   buttons.appendChild(addPaymentButton);
   buttons.appendChild(removeMemberButton);
 
-  container.appendChild(addedMember);
-  container.appendChild(buttons);
+  hstack.appendChild(addedMember);
+  hstack.appendChild(buttons);
 
-  nameList.appendChild(container);
+  const vstack = document.createElement("div")
+  vstack.class = "vstack"
+
+  vstack.appendChild(hstack);
+
+  const items = document.createElement("div")
+  items.id = `${name}Items`
+  items.className = "item-list"
+
+  vstack.appendChild(items);
+  vstack.appendChild(items);
+
+  nameList.appendChild(vstack);
 
   const memberInput = document.getElementById("memberInput");
   memberInput.value = "";
@@ -101,17 +118,22 @@ const showPaymentInput = (name) => {
   name_element.textContent = `Entering ${name}'s payment...`;
   paymentContainer.appendChild(name_element);
 
-  const paymentInputContainer = getPaymentInputContainer();
+  const paymentInputContainer = getPaymentInputContainer(name);
   paymentContainer.appendChild(paymentInputContainer);
 
   field.appendChild(paymentContainer);
 };
 
 const addPayment = (name, title, amount) => {
-  console.log(name, title, amount);
+  const memberContainer = document.getElementById(`${name}Items`);
+  const paymentItems = document.createElement("div")
+  paymentItems.className = "payment-item";
+  paymentItems.textContent = `${title} - ${amount}`
+  
+  memberContainer.prepend(paymentItems);
 };
 
-const getPaymentInputContainer = () => {
+const getPaymentInputContainer = (name) => {
   paymentInputContainer = document.createElement("div");
   paymentInputContainer.id = "paymentInputContainer";
 

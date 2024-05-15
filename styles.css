@@ -120,6 +120,20 @@ button {
   width: 100%;
 }
 
+.payment-items-box {
+  font-size: 70px;
+  margin: 20px 20px;
+}
+
+.payment-item {
+  text-align: center;
+}
+
+.vstack {
+  display: flex;
+  flex-direction: row;
+}
+
 .member-container {
   display: flex;
   justify-content: space-between;
@@ -135,6 +149,9 @@ button {
 .member-buttons {
   display: flex;
   justify-content: right;
+}
+.item-list {
+  font-size: 200px;
 }
 
 .member-button {
